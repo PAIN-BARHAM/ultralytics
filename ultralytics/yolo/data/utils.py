@@ -119,6 +119,9 @@ def verify_image_label(args):
                     msg = f'{prefix}WARNING ⚠️ {im_file}: {nl - len(i)} duplicate labels removed'
             else:
                 ne = 1  # label empty
+                # Write the images paths to a file and check them manually 
+                with open("/home/think3/Desktop/test_yolo/datasets/dataset3/missing_files2.txt", 'a') as f:
+                    f.writelines(lb_file + '\n')
                 lb = np.zeros((0, 39), dtype=np.float32) if keypoint else np.zeros((0, 5), dtype=np.float32)
         else:
             nm = 1  # label missing

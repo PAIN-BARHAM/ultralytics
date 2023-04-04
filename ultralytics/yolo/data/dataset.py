@@ -100,7 +100,7 @@ class YOLODataset(BaseDataset):
                             bbox_format='xywh'))
                 if msg:
                     msgs.append(msg)
-                pbar.desc = f'{desc} {nf} images, {nm + ne} backgrounds, {nc} corrupt'
+                pbar.desc = f'{desc} {nf} images, {nm} missing, {ne} empty, {nc} corrupt'
             pbar.close()
 
         if msgs:
